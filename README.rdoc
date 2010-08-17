@@ -3,7 +3,7 @@
 99linguists extends Kernel#String with awesome lingual translation powers. The default engine
 is Google's Translation API, but you saw that coming. Here's the cool part:
   
-It can also leverage the "Freelancer":http://www.freelancer.com/affiliates/logankoester/ API to have your string translated 
+It can also leverage the {Freelancer API}[http://www.freelancer.com/affiliates/logankoester/] o have your string translated 
 professionally by a human, and handle all aspects of posting the project, choosing a candidate, downloading the result
 and paying them for their work...completely without your intervention!
 
@@ -16,7 +16,7 @@ don't bring it up again: he's sensitive.
  /|\
  /\
  
-For the past few months Fred has been happy enough writing a blog about his pet ostrich her misguided 
+For the past few months Fred has been happy enough writing a blog about his pet ostrich and her misguided 
 attempts at air travel. He doesn't mind the long hours writing, the unintuitive UI of his Wordpress installation,
 or the trite, brainless subject matter he writes about. He loves his bird. But the blog is just not pulling in 
 the kind of ad revenue he hoped for when he dreamed this whole thing up on a hungover saturday afternoon in Atlantic City.
