@@ -3,7 +3,7 @@
 99linguists extends Kernel#String with awesome lingual translation powers. The default engine
 is Google's Translation API, but you saw that coming. Here's the cool part:
   
-It can also leverage the {Freelancer API}[http://www.freelancer.com/affiliates/logankoester/] o have your string translated 
+It can also leverage the {Freelancer API}[http://www.freelancer.com/affiliates/logankoester/] to have your string translated 
 professionally by a human, and handle all aspects of posting the project, choosing a candidate, downloading the result
 and paying them for their work...completely without your intervention!
 
@@ -18,16 +18,16 @@ don't bring it up again: he's sensitive.
  
 For the past few months Fred has been happy enough writing a blog about his pet ostrich and her misguided 
 attempts at air travel. He doesn't mind the long hours writing, the unintuitive UI of his Wordpress installation,
-or the trite, brainless subject matter he writes about. He loves his bird. But the blog is just not pulling in 
-the kind of ad revenue he hoped for when he dreamed this whole thing up on a hungover saturday afternoon in Atlantic City.
+or the trite, brainless subject matter he writes about. He loves that bird. But the blog is just not pulling in 
+the kind of ad revenue he hoped for when he dreamed this whole thing up on an uneventful saturday afternoon in Atlantic City.
 
 Late last night, Fred was captivated by his visitor stats on Google Analytics, dreaming about making it big
 in the blogosphere, and he noticed something unusual. 74% of his readers this month have come from France.
 And just like that it struck him: it is time to start blogging in French!
 
 But Fred doesn't speak French. He tried an automated translator, but computers just barely speak French. He tried
-a human translator, but humans require constant instruction and oversight. If only there was a way to _automate *human
-translators*_!
+a human translator, but humans require constant instruction and oversight. If only there was a way to <i>automate <b>human
+translators</b></i>!
 
 Well at least for Rubyists, now there is. The syntactic sugar comes in a few different flavors, so let's take
 a quick tour through them...
@@ -78,7 +78,7 @@ of this week! Which should give you something to look forward to on Monday, shou
 === And now for something completely different...
 
 If you dig metaprogramming (and really, who doesn't?), how about adapting
-this library to embed _freelance programmers_ in your code?
+this library to embed <i>freelance programmers</i> in your code?
 
 Logically the only thing cooler than code that writes code must be code that hires humans
 to write code. And just like that, Cucumber finally has a reason to exist!
