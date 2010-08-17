@@ -1,6 +1,87 @@
 = 99linguists
 
-Description goes here.
+99linguists extends Kernel#String with awesome lingual translation powers. The default engine
+is Google's Translation API, but you saw that coming. Here's the cool part:
+  
+It can also leverage the "Freelancer":http://www.freelancer.com/affiliates/logankoester/ API to have your string translated 
+professionally by a human, and handle all aspects of posting the project, choosing a candidate, downloading the result
+and paying them for their work...completely without your intervention!
+
+=== The Story
+
+Meet Fred. Fred is a fictional character I invented for this contrived scenario. But please 
+don't bring it up again: he's sensitive.
+
+  O    <- THIS IS FRED
+ /|\
+ /\
+ 
+For the past few months Fred has been happy enough writing a blog about his pet ostrich her misguided 
+attempts at air travel. He doesn't mind the long hours writing, the unintuitive UI of his Wordpress installation,
+or the trite, brainless subject matter he writes about. He loves his bird. But the blog is just not pulling in 
+the kind of ad revenue he hoped for when he dreamed this whole thing up on a hungover saturday afternoon in Atlantic City.
+
+Late last night, Fred was captivated by his visitor stats on Google Analytics, dreaming about making it big
+in the blogosphere, and he noticed something unusual. 74% of his readers this month have come from France.
+And just like that it struck him: it is time to start blogging in French!
+
+But Fred doesn't speak French. He tried an automated translator, but computers just barely speak French. He tried
+a human translator, but humans require constant instruction and oversight. If only there was a way to _automate *human
+translators*_!
+
+Well at least for Rubyists, now there is. The syntactic sugar comes in a few different flavors, so let's take
+a quick tour through them...
+
+== The Examples
+
+  blog = "Hello, France!"
+
+  # Example #1: Using String#translate with an options hash
+  # The default translation engine is Google::Translator
+  # This will return a translated String.
+  puts blog.translate :to => :french
+
+  # Example #2: Using a Translator object manually
+  # Sometimes you may want to build a translator yourself, if you are overriding lots of defaults.
+  # If laziness is enabled, the translation will run as soon as enough information has been set. It is
+  # usually best to ignore this possibility, and run Translator#translate yourself when ready.
+
+  # Any option can be set during initialization
+  translator = Translator.new(:engine => Google::Translator.new) # Actually, :engine is optional
+  translator.from :english # Google can guess, so this one is technically optional too
+  translator.to   :french
+  puts translator.translate(blog)
+
+  # Now we can turn laziness on and reuse our existing configuration
+  translator.lazy true
+  puts translator.to(:spanish)
+
+  # Hey, you promised human translation!
+  # Alright, alright... here it is...
+
+  # Prepare the Freelancer API client
+  freelancer = Freelancer::Client.new.key('MY KEY').secret('MY SECRET')
+
+  # Example #3: Using String#translate with a method chain
+  project = blog.translate.with(freelancer).from(:english).to(:french)
+
+Okay! The ebook was uploaded and a project is posted with your Freelancer.com account.
+Humans are slow, so we don't have a translated string just yet. Instead we have
+an object containing the details of the posted project, which we can store in a database and
+schedule a job to check back and select a winner. We will then check back periodically
+for a translated document to grab, pay the translator, and go on our way.
+
+Up until this point, I've led you to believe that the Freelancer translation engine was finished,
+working and quite beautiful. I lied. But I do intend to have it finished by the end
+of this week! Which should give you something to look forward to on Monday, shouldn't it? Sorry about that.
+
+=== And now for something completely different...
+
+If you dig metaprogramming (and really, who doesn't?), how about adapting
+this library to embed _freelance programmers_ in your code?
+
+Logically the only thing cooler than code that writes code must be code that hires humans
+to write code. And just like that, Cucumber finally has a reason to exist!
 
 == Note on Patches/Pull Requests
  
